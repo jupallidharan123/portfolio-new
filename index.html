@@ -1,0 +1,2696 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jupalli Dharan | Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+
+        /* =========================================
+           BASIC RESET
+        ========================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        :root {
+
+            --bg: #080b14;
+            --bg2: #0d111c;
+            --card: #111625;
+
+            --text: #ffffff;
+            --muted: #a7afc3;
+
+            --primary: #00e5ff;
+            --primary2: #7c5cff;
+
+            --border: rgba(255,255,255,0.09);
+
+        }
+
+        body {
+
+            font-family: "Inter", sans-serif;
+
+            background: var(--bg);
+
+            color: var(--text);
+
+            line-height: 1.7;
+
+            transition: 0.3s;
+
+        }
+
+        body.light {
+
+            --bg: #f5f7fb;
+            --bg2: #ffffff;
+            --card: #ffffff;
+
+            --text: #171a27;
+            --muted: #606779;
+
+            --border: rgba(20,25,40,0.1);
+
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+
+            width: min(1120px, 90%);
+
+            margin: auto;
+
+        }
+
+        .section {
+
+            padding: 100px 0;
+
+        }
+
+
+        /* =========================================
+           NAVBAR
+        ========================================= */
+
+        header {
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+
+            z-index: 1000;
+
+            background: rgba(8,11,20,0.88);
+
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid var(--border);
+
+        }
+
+        .navbar {
+
+            height: 75px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+        }
+
+        .logo {
+
+            font-size: 25px;
+
+            font-weight: 800;
+
+        }
+
+        .logo span {
+
+            color: var(--primary);
+
+        }
+
+        nav {
+
+            display: flex;
+
+            gap: 25px;
+
+        }
+
+        nav a {
+
+            color: var(--muted);
+
+            font-size: 13px;
+
+            transition: 0.3s;
+
+        }
+
+        nav a:hover {
+
+            color: var(--primary);
+
+        }
+
+        .nav-actions {
+
+            display: flex;
+
+            gap: 10px;
+
+        }
+
+        .nav-button {
+
+            width: 40px;
+
+            height: 40px;
+
+            border-radius: 10px;
+
+            border: 1px solid var(--border);
+
+            background: var(--card);
+
+            color: var(--text);
+
+            cursor: pointer;
+
+        }
+
+        #menuButton {
+
+            display: none;
+
+        }
+
+
+        /* =========================================
+           HERO
+        ========================================= */
+
+        #home {
+
+            min-height: 100vh;
+
+            padding-top: 75px;
+
+            display: flex;
+
+            align-items: center;
+
+            overflow: hidden;
+
+        }
+
+        .hero {
+
+            display: grid;
+
+            grid-template-columns: 1.05fr 0.95fr;
+
+            gap: 50px;
+
+            align-items: center;
+
+        }
+
+        .hero-small {
+
+            color: var(--primary);
+
+            font-weight: 700;
+
+            font-size: 15px;
+
+            margin-bottom: 10px;
+
+        }
+
+        .hero h1 {
+
+            font-size: clamp(45px, 6vw, 75px);
+
+            line-height: 1.05;
+
+            letter-spacing: -4px;
+
+        }
+
+        .hero h1 span {
+
+            color: var(--primary);
+
+        }
+
+        .hero h2 {
+
+            color: var(--muted);
+
+            margin: 20px 0;
+
+            font-size: 21px;
+
+        }
+
+        .hero-description {
+
+            color: var(--muted);
+
+            max-width: 620px;
+
+            font-size: 14px;
+
+        }
+
+
+        /* =========================================
+           BUTTONS
+        ========================================= */
+
+        .buttons {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 15px;
+
+            margin-top: 30px;
+
+        }
+
+        .btn {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding: 13px 20px;
+
+            border-radius: 10px;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            transition: 0.3s;
+
+        }
+
+        .primary {
+
+            background: var(--primary);
+
+            color: #061018;
+
+        }
+
+        .primary:hover {
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 10px 30px rgba(0,229,255,0.30);
+
+        }
+
+        .secondary {
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+        }
+
+        .secondary:hover {
+
+            border-color: var(--primary);
+
+            transform: translateY(-3px);
+
+        }
+
+
+        /* =========================================
+           SOCIAL
+        ========================================= */
+
+        .social {
+
+            display: flex;
+
+            gap: 10px;
+
+            margin-top: 25px;
+
+        }
+
+        .social a {
+
+            width: 42px;
+
+            height: 42px;
+
+            border: 1px solid var(--border);
+
+            background: var(--card);
+
+            border-radius: 10px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            transition: 0.3s;
+
+        }
+
+        .social a:hover {
+
+            background: var(--primary);
+
+            color: #061018;
+
+            transform: translateY(-4px);
+
+        }
+
+
+        /* =========================================
+           PROFILE IMAGE AREA
+        ========================================= */
+
+        .hero-visual {
+
+            min-height: 500px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            position: relative;
+
+        }
+
+        /*
+           Outer hexagon
+        */
+
+        .profile-frame {
+
+            width: 340px;
+
+            height: 390px;
+
+            position: relative;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            filter:
+                drop-shadow(0 0 15px rgba(0,229,255,0.8))
+                drop-shadow(0 0 40px rgba(124,92,255,0.5));
+
+        }
+
+
+        /*
+           Hexagon background
+        */
+
+        .profile-frame::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 100%;
+
+            height: 100%;
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    var(--primary),
+                    var(--primary2)
+                );
+
+            clip-path: polygon(
+
+                25% 3%,
+                75% 3%,
+                100% 25%,
+                100% 75%,
+                75% 97%,
+                25% 97%,
+                0% 75%,
+                0% 25%
+
+            );
+
+        }
+
+
+        /*
+           Dark inner frame
+        */
+
+        .profile-frame::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 96%;
+
+            height: 96%;
+
+            background: #0c1220;
+
+            clip-path: polygon(
+
+                25% 3%,
+                75% 3%,
+                100% 25%,
+                100% 75%,
+                75% 97%,
+                25% 97%,
+                0% 75%,
+                0% 25%
+
+            );
+
+        }
+
+
+        /*
+           Actual photo
+        */
+
+        .profile-image {
+
+            position: relative;
+
+            z-index: 5;
+
+            width: 92%;
+
+            height: 92%;
+
+            object-fit: cover;
+
+            object-position: center top;
+
+            clip-path: polygon(
+
+                25% 3%,
+                75% 3%,
+                100% 25%,
+                100% 75%,
+                75% 97%,
+                25% 97%,
+                0% 75%,
+                0% 25%
+
+            );
+
+            transition: 0.5s;
+
+        }
+
+        .profile-frame:hover .profile-image {
+
+            transform: scale(1.03);
+
+        }
+
+
+        /* =========================================
+           FLOATING SKILLS
+        ========================================= */
+
+        .floating {
+
+            position: absolute;
+
+            z-index: 10;
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            padding: 10px 15px;
+
+            border-radius: 10px;
+
+            font-size: 12px;
+
+            box-shadow:
+                0 10px 30px rgba(0,0,0,0.25);
+
+            animation: floating 4s infinite ease-in-out;
+
+        }
+
+        .floating i {
+
+            color: var(--primary);
+
+            margin-right: 5px;
+
+        }
+
+        .python {
+
+            top: 70px;
+
+            left: 0;
+
+        }
+
+        .django {
+
+            top: 190px;
+
+            right: 0;
+
+            animation-delay: 1s;
+
+        }
+
+        .mysql {
+
+            bottom: 70px;
+
+            left: 40px;
+
+            animation-delay: 2s;
+
+        }
+
+        @keyframes floating {
+
+            50% {
+
+                transform: translateY(-12px);
+
+            }
+
+        }
+
+
+        /* =========================================
+           SECTION TITLES
+        ========================================= */
+
+        .section-title {
+
+            margin-bottom: 45px;
+
+        }
+
+        .section-title p {
+
+            color: var(--primary);
+
+            letter-spacing: 2px;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+        }
+
+        .section-title h2 {
+
+            font-size: 40px;
+
+            margin-top: 8px;
+
+        }
+
+        .section-title h2 span {
+
+            color: var(--primary);
+
+        }
+
+
+        /* =========================================
+           ABOUT
+        ========================================= */
+
+        .about-grid {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 60px;
+
+        }
+
+        .about-text p {
+
+            color: var(--muted);
+
+            margin-bottom: 18px;
+
+        }
+
+        .about-info {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 15px;
+
+        }
+
+        .info-card {
+
+            padding: 20px;
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 12px;
+
+        }
+
+        .info-card i {
+
+            color: var(--primary);
+
+            margin-bottom: 8px;
+
+        }
+
+        .info-card h4 {
+
+            font-size: 13px;
+
+        }
+
+        .info-card p {
+
+            color: var(--muted);
+
+            font-size: 11px;
+
+        }
+
+
+        /* =========================================
+           SKILLS
+        ========================================= */
+
+        #skills {
+
+            background: var(--bg2);
+
+        }
+
+        .skills {
+
+            display: grid;
+
+            grid-template-columns: repeat(4,1fr);
+
+            gap: 18px;
+
+        }
+
+        .skill {
+
+            padding: 25px;
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 14px;
+
+            transition: 0.3s;
+
+        }
+
+        .skill:hover {
+
+            transform: translateY(-7px);
+
+            border-color: var(--primary);
+
+        }
+
+        .skill-icon {
+
+            width: 50px;
+
+            height: 50px;
+
+            border-radius: 12px;
+
+            background: rgba(0,229,255,0.10);
+
+            color: var(--primary);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 22px;
+
+            margin-bottom: 15px;
+
+        }
+
+        .skill h3 {
+
+            font-size: 15px;
+
+        }
+
+        .skill p {
+
+            color: var(--muted);
+
+            font-size: 11px;
+
+        }
+
+
+        /* =========================================
+           PROJECT
+        ========================================= */
+
+        .project {
+
+            display: grid;
+
+            grid-template-columns: 0.8fr 1.2fr;
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 18px;
+
+            overflow: hidden;
+
+        }
+
+        .project-image {
+
+            min-height: 420px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            flex-direction: column;
+
+            background:
+
+                radial-gradient(
+                    circle,
+                    rgba(0,229,255,0.20),
+                    transparent 65%
+                );
+
+        }
+
+        .project-icon {
+
+            width: 120px;
+
+            height: 120px;
+
+            border-radius: 30px;
+
+            background: rgba(0,229,255,0.10);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 55px;
+
+            color: var(--primary);
+
+        }
+
+        .project-image span {
+
+            margin-top: 20px;
+
+            color: var(--muted);
+
+            font-size: 10px;
+
+            letter-spacing: 2px;
+
+        }
+
+        .project-content {
+
+            padding: 50px;
+
+        }
+
+        .number {
+
+            color: var(--primary);
+
+            font-size: 12px;
+
+        }
+
+        .project-content h3 {
+
+            font-size: 28px;
+
+            margin: 10px 0;
+
+        }
+
+        .project-content > p {
+
+            color: var(--muted);
+
+            font-size: 13px;
+
+        }
+
+        .features {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 10px;
+
+            margin-top: 25px;
+
+        }
+
+        .features div {
+
+            font-size: 11px;
+
+        }
+
+        .features i {
+
+            color: var(--primary);
+
+            margin-right: 6px;
+
+        }
+
+        .tags {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 7px;
+
+            margin-top: 25px;
+
+        }
+
+        .tags span {
+
+            color: var(--primary);
+
+            background: rgba(0,229,255,0.08);
+
+            border: 1px solid rgba(0,229,255,0.2);
+
+            padding: 5px 9px;
+
+            border-radius: 6px;
+
+            font-size: 10px;
+
+        }
+
+
+        /* =========================================
+           EDUCATION
+        ========================================= */
+
+        #education {
+
+            background: var(--bg2);
+
+        }
+
+        .timeline {
+
+            max-width: 800px;
+
+            margin: auto;
+
+        }
+
+        .timeline-item {
+
+            display: flex;
+
+            gap: 20px;
+
+            margin-bottom: 30px;
+
+        }
+
+        .timeline-dot {
+
+            min-width: 45px;
+
+            height: 45px;
+
+            border-radius: 50%;
+
+            border: 1px solid var(--primary);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: var(--primary);
+
+            background: var(--card);
+
+        }
+
+        .timeline-content {
+
+            padding: 22px;
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 14px;
+
+            width: 100%;
+
+        }
+
+        .timeline-date {
+
+            color: var(--primary);
+
+            font-size: 10px;
+
+        }
+
+        .timeline-content h3 {
+
+            font-size: 18px;
+
+        }
+
+        .timeline-content h4 {
+
+            color: var(--muted);
+
+            font-size: 13px;
+
+        }
+
+        .timeline-content p {
+
+            color: var(--muted);
+
+            font-size: 12px;
+
+        }
+
+
+        /* =========================================
+           CERTIFICATIONS
+        ========================================= */
+
+        .certifications {
+
+            display: grid;
+
+            grid-template-columns: repeat(3,1fr);
+
+            gap: 18px;
+
+        }
+
+        .certificate {
+
+            padding: 25px;
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 14px;
+
+        }
+
+        .certificate i {
+
+            color: var(--primary);
+
+            font-size: 25px;
+
+            margin-bottom: 15px;
+
+        }
+
+        .certificate h3 {
+
+            font-size: 13px;
+
+        }
+
+        .certificate p {
+
+            color: var(--muted);
+
+            font-size: 11px;
+
+        }
+
+
+        /* =========================================
+           CONTACT
+        ========================================= */
+
+        .contact-title {
+
+            text-align: center;
+
+        }
+
+        .contact-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(4,1fr);
+
+            gap: 15px;
+
+        }
+
+        .contact-card {
+
+            padding: 22px;
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 13px;
+
+            transition: 0.3s;
+
+        }
+
+        .contact-card:hover {
+
+            transform: translateY(-5px);
+
+            border-color: var(--primary);
+
+        }
+
+        .contact-card i {
+
+            color: var(--primary);
+
+            font-size: 20px;
+
+            margin-bottom: 10px;
+
+        }
+
+        .contact-card h3 {
+
+            font-size: 12px;
+
+        }
+
+        .contact-card p {
+
+            color: var(--muted);
+
+            font-size: 10px;
+
+            word-break: break-word;
+
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        footer {
+
+            padding: 40px 0;
+
+            background: var(--bg2);
+
+            border-top: 1px solid var(--border);
+
+            text-align: center;
+
+        }
+
+        footer p {
+
+            color: var(--muted);
+
+            font-size: 11px;
+
+            margin-top: 8px;
+
+        }
+
+
+        /* =========================================
+           BACK TO TOP
+        ========================================= */
+
+        #topButton {
+
+            position: fixed;
+
+            right: 25px;
+
+            bottom: 25px;
+
+            width: 43px;
+
+            height: 43px;
+
+            background: var(--primary);
+
+            color: #061018;
+
+            border: none;
+
+            border-radius: 9px;
+
+            cursor: pointer;
+
+            display: none;
+
+        }
+
+        #topButton.show {
+
+            display: block;
+
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media(max-width:900px) {
+
+            .hero {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .hero-content {
+
+                text-align: center;
+
+            }
+
+            .hero-description {
+
+                margin: auto;
+
+            }
+
+            .buttons,
+            .social {
+
+                justify-content: center;
+
+            }
+
+            .hero-visual {
+
+                min-height: 450px;
+
+            }
+
+            .skills {
+
+                grid-template-columns: repeat(2,1fr);
+
+            }
+
+            .contact-grid {
+
+                grid-template-columns: repeat(2,1fr);
+
+            }
+
+            .project {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .about-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+        }
+
+
+        @media(max-width:700px) {
+
+            #menuButton {
+
+                display: block;
+
+            }
+
+            nav {
+
+                position: absolute;
+
+                top: 75px;
+
+                left: 0;
+
+                width: 100%;
+
+                background: var(--bg2);
+
+                display: none;
+
+                flex-direction: column;
+
+                padding: 20px;
+
+            }
+
+            nav.show {
+
+                display: flex;
+
+            }
+
+            .certifications {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .profile-frame {
+
+                width: 280px;
+
+                height: 330px;
+
+            }
+
+            .floating {
+
+                font-size: 10px;
+
+                padding: 8px 10px;
+
+            }
+
+            .python {
+
+                left: 10px;
+
+            }
+
+            .django {
+
+                right: 10px;
+
+            }
+
+        }
+
+
+        @media(max-width:500px) {
+
+            .skills {
+
+                grid-template-columns: 1fr 1fr;
+
+            }
+
+            .contact-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .about-info {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .features {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .project-content {
+
+                padding: 30px 20px;
+
+            }
+
+            .hero h1 {
+
+                font-size: 45px;
+
+            }
+
+            .profile-frame {
+
+                width: 250px;
+
+                height: 300px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     NAVBAR
+========================================= -->
+
+<header>
+
+    <div class="container navbar">
+
+        <a href="#home" class="logo">
+
+            Dharan<span>.</span>
+
+        </a>
+
+
+        <nav id="navigation">
+
+            <a href="#home">Home</a>
+
+            <a href="#about">About</a>
+
+            <a href="#skills">Skills</a>
+
+            <a href="#projects">Projects</a>
+
+            <a href="#education">Education</a>
+
+            <a href="#certifications">Certifications</a>
+
+            <a href="#contact">Contact</a>
+
+        </nav>
+
+
+        <div class="nav-actions">
+
+            <button
+                class="nav-button"
+                id="themeButton">
+
+                <i class="fas fa-moon"></i>
+
+            </button>
+
+
+            <button
+                class="nav-button"
+                id="menuButton">
+
+                <i class="fas fa-bars"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+<section id="home">
+
+    <div class="container hero">
+
+
+        <!-- LEFT SIDE -->
+
+        <div class="hero-content">
+
+            <p class="hero-small">
+
+                Hello, It's Me
+
+            </p>
+
+
+            <h1>
+
+                 <span> Jupalli Dharan</span>
+
+            </h1>
+
+
+            <h2>
+
+                Full Stack Developer
+
+            </h2>
+
+
+            <p class="hero-description">
+
+                Computer Science Engineering undergraduate
+                interested in full-stack development and
+                backend engineering. Skilled in Python,
+                Django, HTML, CSS, JavaScript and MySQL.
+
+            </p>
+
+
+            <div class="buttons">
+
+
+                <a
+                    href="#projects"
+                    class="btn primary">
+
+                    <i class="fas fa-code"></i>
+
+                    View My Work
+
+                </a>
+
+
+                <!-- DOWNLOAD RESUME -->
+
+                <a
+                    href="dharan.pdf"
+                    download="Jupalli_Dharan_Resume (6).pdf"
+                    class="btn secondary">
+
+                    <i class="fas fa-file-arrow-down"></i>
+
+                    Download Resume
+
+                </a>
+
+            </div>
+
+
+            <!-- SOCIAL LINKS -->
+
+            <div class="social">
+
+
+                <a
+                    href="https://github.com/jupallidharan123"
+                    target="_blank">
+
+                    <i class="fab fa-github"></i>
+
+                </a>
+
+
+                <a
+                    href="https://www.linkedin.com/in/jupalli-dharan-90143b3b1/"
+                    target="_blank">
+
+                    <i class="fab fa-linkedin"></i>
+
+                </a>
+
+
+                <a
+                    href="mailto:jupallidharan@gmail.com">
+
+                    <i class="fas fa-envelope"></i>
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================
+             RIGHT SIDE PROFILE IMAGE
+        ====================================== -->
+
+        <div class="hero-visual">
+
+
+            <div class="profile-frame">
+
+                <!--
+                    YOUR PHOTO
+
+                    Rename your uploaded image to:
+
+                    profile.jpg
+
+                    Put it in the same folder
+                    as index.html.
+                -->
+
+                <img
+                    src="profile.jpg"
+                    alt="Jupalli Dharan"
+                    class="profile-image">
+
+            </div>
+
+
+            <!-- FLOATING SKILLS -->
+
+            <div class="floating python">
+
+                <i class="fab fa-python"></i>
+
+                Python
+
+            </div>
+
+
+            <div class="floating django">
+
+                <i class="fas fa-server"></i>
+
+                Django
+
+            </div>
+
+
+            <div class="floating mysql">
+
+                <i class="fas fa-database"></i>
+
+                MySQL
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     ABOUT
+========================================= -->
+
+<section id="about" class="section">
+
+    <div class="container">
+
+
+        <div class="section-title">
+
+            <p>ABOUT ME</p>
+
+            <h2>
+
+                About <span>Me</span>
+
+            </h2>
+
+        </div>
+
+
+        <div class="about-grid">
+
+
+            <div class="about-text">
+
+                <p>
+
+                    I am a Computer Science Engineering
+                    undergraduate with a strong interest in
+                    full-stack development and backend
+                    engineering.
+
+                </p>
+
+
+                <p>
+
+                    I enjoy building practical web applications
+                    using Python, Django, HTML, CSS, JavaScript
+                    and MySQL.
+
+                </p>
+
+
+                <p>
+
+                    My goal is to build useful software
+                    applications that solve real-world problems.
+
+                </p>
+
+            </div>
+
+
+            <div class="about-info">
+
+
+                <div class="info-card">
+
+                    <i class="fas fa-location-dot"></i>
+
+                    <h4>Location</h4>
+
+                    <p>
+
+                        Tirupati, Andhra Pradesh
+
+                    </p>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <i class="fas fa-graduation-cap"></i>
+
+                    <h4>Degree</h4>
+
+                    <p>
+
+                        B.E. Computer Science Engineering
+
+                    </p>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <i class="fas fa-calendar"></i>
+
+                    <h4>Graduation</h4>
+
+                    <p>
+
+                        Expected March 2027
+
+                    </p>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <i class="fas fa-code"></i>
+
+                    <h4>Focus</h4>
+
+                    <p>
+
+                        Full Stack & Backend
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     SKILLS
+========================================= -->
+
+<section id="skills" class="section">
+
+    <div class="container">
+
+
+        <div class="section-title">
+
+            <p>TECHNICAL SKILLS</p>
+
+            <h2>
+
+                My <span>Skills</span>
+
+            </h2>
+
+        </div>
+
+
+        <div class="skills">
+
+
+            <div class="skill">
+
+                <div class="skill-icon">
+
+                    <i class="fab fa-python"></i>
+
+                </div>
+
+                <h3>Python</h3>
+
+                <p>
+
+                    Programming and problem solving
+
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-icon">
+
+                    <i class="fas fa-server"></i>
+
+                </div>
+
+                <h3>Django</h3>
+
+                <p>
+
+                    Backend web development
+
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-icon">
+
+                    <i class="fab fa-html5"></i>
+
+                </div>
+
+                <h3>HTML</h3>
+
+                <p>
+
+                    Semantic web development
+
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-icon">
+
+                    <i class="fab fa-css3-alt"></i>
+
+                </div>
+
+                <h3>CSS</h3>
+
+                <p>
+
+                    Responsive UI design
+
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-icon">
+
+                    <i class="fab fa-js"></i>
+
+                </div>
+
+                <h3>JavaScript</h3>
+
+                <p>
+
+                    Interactive web applications
+
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-icon">
+
+                    <i class="fas fa-database"></i>
+
+                </div>
+
+                <h3>MySQL</h3>
+
+                <p>
+
+                    Database management
+
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-icon">
+
+                    <i class="fas fa-lock"></i>
+
+                </div>
+
+                <h3>Authentication</h3>
+
+                <p>
+
+                    OTP and role-based authentication
+
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-icon">
+
+                    <i class="fas fa-lightbulb"></i>
+
+                </div>
+
+                <h3>Problem Solving</h3>
+
+                <p>
+
+                    Analytical thinking
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     PROJECTS
+========================================= -->
+
+<section id="projects" class="section">
+
+    <div class="container">
+
+
+        <div class="section-title">
+
+            <p>PROJECT</p>
+
+            <h2>
+
+                Featured <span>Project</span>
+
+            </h2>
+
+        </div>
+
+
+        <div class="project">
+
+
+            <div class="project-image">
+
+                <div class="project-icon">
+
+                    <i class="fas fa-shield-halved"></i>
+
+                </div>
+
+                <span>
+
+                    FULL STACK PROJECT
+
+                </span>
+
+            </div>
+
+
+            <div class="project-content">
+
+                <div class="number">
+
+                    PROJECT 01
+
+                </div>
+
+
+                <h3>
+
+                    VaultX – Warranty Management System
+
+                </h3>
+
+
+                <p>
+
+                    A full-stack web application developed
+                    using Django and MySQL for managing
+                    warranties, claims and service requests.
+
+                </p>
+
+
+                <div class="features">
+
+
+                    <div>
+
+                        <i class="fas fa-check"></i>
+
+                        OTP Authentication
+
+                    </div>
+
+
+                    <div>
+
+                        <i class="fas fa-check"></i>
+
+                        Role-based Dashboards
+
+                    </div>
+
+
+                    <div>
+
+                        <i class="fas fa-check"></i>
+
+                        Customer Dashboard
+
+                    </div>
+
+
+                    <div>
+
+                        <i class="fas fa-check"></i>
+
+                        Seller Dashboard
+
+                    </div>
+
+
+                    <div>
+
+                        <i class="fas fa-check"></i>
+
+                        Service Center Dashboard
+
+                    </div>
+
+
+                    <div>
+
+                        <i class="fas fa-check"></i>
+
+                        Email Notifications
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="tags">
+
+                    <span>Python</span>
+
+                    <span>Django</span>
+
+                    <span>MySQL</span>
+
+                    <span>HTML</span>
+
+                    <span>CSS</span>
+
+                    <span>JavaScript</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     EDUCATION
+========================================= -->
+
+<section id="education" class="section">
+
+    <div class="container">
+
+
+        <div class="section-title">
+
+            <p>EDUCATION</p>
+
+            <h2>
+
+                Academic <span>Journey</span>
+
+            </h2>
+
+        </div>
+
+
+        <div class="timeline">
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot">
+
+                    <i class="fas fa-graduation-cap"></i>
+
+                </div>
+
+
+                <div class="timeline-content">
+
+                    <span class="timeline-date">
+
+                        Expected March 2027
+
+                    </span>
+
+
+                    <h3>
+
+                        Bachelor of Engineering
+
+                    </h3>
+
+
+                    <h4>
+
+                        Computer Science Engineering
+
+                    </h4>
+
+
+                    <p>
+
+                        Adhiparasakthi Engineering College,
+                        Melmaruvathur
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot">
+
+                    <i class="fas fa-school"></i>
+
+                </div>
+
+
+                <div class="timeline-content">
+
+                    <span class="timeline-date">
+
+                        Completed March 2023
+
+                    </span>
+
+
+                    <h3>
+
+                        Higher Secondary
+
+                    </h3>
+
+
+                    <h4>
+
+                        Mathematics, Physics, Chemistry
+
+                    </h4>
+
+
+                    <p>
+
+                        Krishna Chaitanya Junior College,
+                        Nellore
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     CERTIFICATIONS
+========================================= -->
+
+<section id="certifications" class="section">
+
+    <div class="container">
+
+
+        <div class="section-title">
+
+            <p>CERTIFICATIONS</p>
+
+            <h2>
+
+                My <span>Certifications</span>
+
+            </h2>
+
+        </div>
+
+
+        <div class="certifications">
+
+
+            <div class="certificate">
+
+                <i class="fas fa-robot"></i>
+
+                <h3>
+
+                    Introduction to Generative AI
+
+                </h3>
+
+                <p>
+
+                    AWS Certificate
+
+                </p>
+
+            </div>
+
+
+            <div class="certificate">
+
+                <i class="fas fa-laptop-code"></i>
+
+                <h3>
+
+                    Full Stack
+
+                </h3>
+
+                <p>
+
+                    EY Edunet Certificate
+
+                </p>
+
+            </div>
+
+
+            <div class="certificate">
+
+                <i class="fas fa-brain"></i>
+
+                <h3>
+
+                    Artificial Intelligence
+                    and Machine Learning
+
+                </h3>
+
+                <p>
+
+                    Infosys Certificate
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     CONTACT
+========================================= -->
+
+<section id="contact" class="section">
+
+    <div class="container">
+
+
+        <div class="section-title contact-title">
+
+            <p>CONTACT</p>
+
+            <h2>
+
+                Let's <span>Connect</span>
+
+            </h2>
+
+        </div>
+
+
+        <div class="contact-grid">
+
+
+            <a
+                href="mailto:jupallidharan@gmail.com"
+                class="contact-card">
+
+                <i class="fas fa-envelope"></i>
+
+                <h3>Email</h3>
+
+                <p>
+
+                    jupallidharan@gmail.com
+
+                </p>
+
+            </a>
+
+
+            <a
+                href="tel:+917416182389"
+                class="contact-card">
+
+                <i class="fas fa-phone"></i>
+
+                <h3>Phone</h3>
+
+                <p>
+
+                    +91 7416182389
+
+                </p>
+
+            </a>
+
+
+            <a
+                href="https://github.com/jupallidharan123"
+                target="_blank"
+                class="contact-card">
+
+                <i class="fab fa-github"></i>
+
+                <h3>GitHub</h3>
+
+                <p>
+
+                    jupallidharan123
+
+                </p>
+
+            </a>
+
+
+            <a
+                href="https://www.linkedin.com/in/jupalli-dharan-90143b3b1/"
+                target="_blank"
+                class="contact-card">
+
+                <i class="fab fa-linkedin"></i>
+
+                <h3>LinkedIn</h3>
+
+                <p>
+
+                    Jupalli Dharan
+
+                </p>
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer>
+
+    <div class="container">
+
+        <a href="#home" class="logo">
+
+            Dharan<span>.</span>
+
+        </a>
+
+
+        <p>
+
+            Full Stack Developer |
+            Computer Science Engineering Student
+
+        </p>
+
+
+        <p>
+
+            © <span id="year"></span>
+            Jupalli Dharan.
+            All Rights Reserved.
+
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================
+     BACK TO TOP
+========================================= -->
+
+<button id="topButton">
+
+    <i class="fas fa-arrow-up"></i>
+
+</button>
+
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
+<script>
+
+
+/* =========================================
+   MOBILE MENU
+========================================= */
+
+const menuButton =
+    document.getElementById("menuButton");
+
+const navigation =
+    document.getElementById("navigation");
+
+
+menuButton.addEventListener("click", () => {
+
+    navigation.classList.toggle("show");
+
+    const icon =
+        menuButton.querySelector("i");
+
+
+    if (navigation.classList.contains("show")) {
+
+        icon.classList.remove("fa-bars");
+
+        icon.classList.add("fa-xmark");
+
+    }
+
+    else {
+
+        icon.classList.remove("fa-xmark");
+
+        icon.classList.add("fa-bars");
+
+    }
+
+});
+
+
+/* =========================================
+   CLOSE MOBILE MENU WHEN CLICKING LINK
+========================================= */
+
+document.querySelectorAll("nav a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        navigation.classList.remove("show");
+
+    });
+
+});
+
+
+/* =========================================
+   DARK / LIGHT MODE
+========================================= */
+
+const themeButton =
+    document.getElementById("themeButton");
+
+
+themeButton.addEventListener("click", () => {
+
+    document.body.classList.toggle("light");
+
+
+    const icon =
+        themeButton.querySelector("i");
+
+
+    if (
+        document.body.classList.contains("light")
+    ) {
+
+        icon.classList.remove("fa-moon");
+
+        icon.classList.add("fa-sun");
+
+        localStorage.setItem(
+            "theme",
+            "light"
+        );
+
+    }
+
+    else {
+
+        icon.classList.remove("fa-sun");
+
+        icon.classList.add("fa-moon");
+
+        localStorage.setItem(
+            "theme",
+            "dark"
+        );
+
+    }
+
+});
+
+
+/* =========================================
+   LOAD SAVED THEME
+========================================= */
+
+if (
+    localStorage.getItem("theme") === "light"
+) {
+
+    document.body.classList.add("light");
+
+    themeButton
+        .querySelector("i")
+        .classList.replace(
+            "fa-moon",
+            "fa-sun"
+        );
+
+}
+
+
+/* =========================================
+   BACK TO TOP
+========================================= */
+
+const topButton =
+    document.getElementById("topButton");
+
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 400) {
+
+        topButton.classList.add("show");
+
+    }
+
+    else {
+
+        topButton.classList.remove("show");
+
+    }
+
+});
+
+
+topButton.addEventListener("click", () => {
+
+    window.scrollTo({
+
+        top: 0,
+
+        behavior: "smooth"
+
+    });
+
+});
+
+
+/* =========================================
+   CURRENT YEAR
+========================================= */
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+
+</script>
+
+
+</body>
+
+</html>
